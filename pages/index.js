@@ -1,5 +1,9 @@
 import Head from 'next/head'
-import SportsApp from '../components/SportsApp'
+import dynamic from 'next/dynamic'
+
+const SportsApp = dynamic(() => import('../components/SportsApp'), {
+  ssr: false,
+})
 
 export default function Home() {
   return (
